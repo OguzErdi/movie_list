@@ -4,7 +4,7 @@ class BuyTicketButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 30),
+      padding: EdgeInsets.only(bottom: 20),
       child: ButtonTheme(
         minWidth: 230,
         height: 50,
@@ -13,9 +13,10 @@ class BuyTicketButton extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           onPressed: () {},
           child: Text(
-            "BUT TICKET",
+            "BUY TICKET",
             style: TextStyle(
-              color: Colors.white70,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
               fontSize: 16
             ),
           ),
