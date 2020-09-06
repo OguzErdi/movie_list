@@ -12,27 +12,30 @@ class MovieList extends StatefulWidget {
 class _MovieListState extends State<MovieList> {
   var _controller;
   var _backgroundController = PageController(initialPage: 0);
-  var _viewportFraction= 0.75;
+  var _viewportFraction = 0.75;
 
   int _currentPos = 0;
-  double _currentOffset = 0;
+  double _currentOffset;
+
+  final int _topMargin = 50;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller = PageController(viewportFraction: _viewportFraction, initialPage: 0);
+    _controller =
+        PageController(viewportFraction: _viewportFraction, initialPage: 0);
 
     _controller.addListener(() {
       // print(_controller.offset);
-      _currentOffset = _controller.offset * (1/_viewportFraction);
+      _currentOffset = _controller.offset * (1 / _viewportFraction);
       _backgroundController.jumpTo(_currentOffset);
       // print("_currentOffset: $_currentOffset");
     });
 
     _backgroundController.addListener(() {
       // print(_backgroundController.offset);
-     });
+    });
   }
 
   @override
@@ -41,7 +44,7 @@ class _MovieListState extends State<MovieList> {
       child: Stack(
         children: [
           PageView.builder(
-            pageSnapping: false,
+              pageSnapping: false,
               reverse: true,
               itemCount: 5,
               controller: _backgroundController,
@@ -73,10 +76,20 @@ class _MovieListState extends State<MovieList> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      final double topMargin = _currentPos == index ? 0 : 50;
+                      bool isCurrentPage = _currentPos == index;
                       // print('topMargin: $topMargin');
-                      return MovieSummary(
-                        topMargin: topMargin,
+                      return AnimatedPadding(
+                        duration: Duration(milliseconds: 250),
+                        padding: isCurrentPage ? EdgeInsets.only(top: 0) : EdgeInsets.only(top: 30),
+                        child: AnimatedOpacity(
+                          duration: Duration(milliseconds: 250),
+                          opacity: isCurrentPage ? 1.0 : 0.7,
+                          child: Container(
+                            child: MovieSummary(
+                              topMargin: 0,
+                            ),
+                          ),
+                        ),
                       );
                     }),
               ),
