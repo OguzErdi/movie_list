@@ -10,20 +10,46 @@ class MovieList extends StatefulWidget {
 }
 
 class _MovieListState extends State<MovieList> {
-  final _controller = PageController(viewportFraction: 0.75, initialPage: 0);
+  var _controller;
+  var _backgroundController = PageController(initialPage: 0);
+  var _viewportFraction= 0.75;
 
   int _currentPos = 0;
+  double _currentOffset = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = PageController(viewportFraction: _viewportFraction, initialPage: 0);
+
+    _controller.addListener(() {
+      // print(_controller.offset);
+      _currentOffset = _controller.offset * (1/_viewportFraction);
+      _backgroundController.jumpTo(_currentOffset);
+      // print("_currentOffset: $_currentOffset");
+    });
+
+    _backgroundController.addListener(() {
+      // print(_backgroundController.offset);
+     });
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(
         children: [
-          PageView.builder(itemBuilder: (context, index) {
-            return Container(
-              color: index % 2 == 0 ? Colors.teal : Colors.amber,
-            );
-          }),
+          PageView.builder(
+            pageSnapping: false,
+              reverse: true,
+              itemCount: 5,
+              controller: _backgroundController,
+              itemBuilder: (context, index) {
+                return Container(
+                  color: index % 2 == 0 ? Colors.teal : Colors.amber,
+                );
+              }),
           Column(
             children: [
               Expanded(
@@ -35,8 +61,11 @@ class _MovieListState extends State<MovieList> {
                 child: PageView.builder(
                     onPageChanged: (pos) {
                       setState(() {
-                        print('_currentPos: $_currentPos');
+                        // print('_currentPos: $_currentPos');
                         _currentPos = pos;
+                        // _backgroundController.animateToPage(pos, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+                        // _backgroundController.animateTo(_controller.offset, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+                        print("_controller offste : ${_controller.offset}");
                       });
                     },
                     physics: BouncingScrollPhysics(),
@@ -45,7 +74,7 @@ class _MovieListState extends State<MovieList> {
                     itemCount: 5,
                     itemBuilder: (context, index) {
                       final double topMargin = _currentPos == index ? 0 : 50;
-                      print('topMargin: $topMargin');
+                      // print('topMargin: $topMargin');
                       return MovieSummary(
                         topMargin: topMargin,
                       );
