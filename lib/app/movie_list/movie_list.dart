@@ -1,40 +1,35 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-import 'elements/buy_ticker_button.dart';
+import 'elements/buy_ticket_button.dart';
 import 'elements/movie_summary.dart';
 
 class MovieList extends StatefulWidget {
-  final _viewportFraction = 0.75;
-  final double _topMargin = 50.0;
-
   @override
   _MovieListState createState() => _MovieListState();
-  
 }
 
 class _MovieListState extends State<MovieList> {
   PageController _controller;
   PageController _backgroundController;
+  final _viewportFraction = 0.75;
+  final double _topMargin = 50.0;
 
   int _currentPos = 0;
-  double _currentOffset= 0;
+  double _currentOffset = 0;
 
-  _MovieListState(){
-    _controller = PageController(viewportFraction: widget._viewportFraction, initialPage: 0);
+  _MovieListState() {
+    _controller =
+        PageController(viewportFraction: _viewportFraction, initialPage: 0);
     _backgroundController = PageController(initialPage: 0);
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     _controller.addListener(() {
       // print(_controller.offset);
-      _currentOffset = _controller.offset * (1 / widget._viewportFraction);
+      _currentOffset = _controller.offset * (1 / _viewportFraction);
 
       _backgroundController.jumpTo(_currentOffset);
       // print("_currentOffset: $_currentOffset");
@@ -74,7 +69,7 @@ class _MovieListState extends State<MovieList> {
                       setState(() {
                         // print('_currentPos: $_currentPos');
                         _currentPos = pos;
-                        print("_controller offste : ${_controller.offset}");
+                        // print("_controller offste : ${_controller.offset}");
                       });
                     },
                     physics: BouncingScrollPhysics(),
@@ -83,17 +78,17 @@ class _MovieListState extends State<MovieList> {
                     itemCount: 5,
                     itemBuilder: (context, index) {
                       bool isCurrentPage = _currentPos == index;
-                      // print('topMargin: $topMargin');
+
                       return AnimatedPadding(
-                        duration: Duration(milliseconds: 250),
-                        padding: isCurrentPage ? EdgeInsets.only(top: 0) : EdgeInsets.only(top: widget._topMargin),
+                        duration: Duration(milliseconds: 200),
+                        padding: isCurrentPage
+                            ? EdgeInsets.only(top: 0)
+                            : EdgeInsets.only(top: _topMargin),
                         child: AnimatedOpacity(
-                          duration: Duration(milliseconds: 250),
+                          duration: Duration(milliseconds: 200),
                           opacity: isCurrentPage ? 1.0 : 0.7,
                           child: Container(
-                            child: MovieSummary(
-                              topMargin: 0,
-                            ),
+                            child: MovieSummary(),
                           ),
                         ),
                       );
