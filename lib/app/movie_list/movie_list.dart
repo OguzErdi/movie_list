@@ -17,27 +17,30 @@ class _MovieListState extends State<MovieList> {
   int _currentPos = 0;
   double _currentOffset = 0;
 
-  _MovieListState() {
-    _controller =
-        PageController(viewportFraction: _viewportFraction, initialPage: 0);
-    _backgroundController = PageController(initialPage: 0);
-  }
-
   @override
   void initState() {
     super.initState();
 
+    _controller = PageController(
+      viewportFraction: _viewportFraction,
+      initialPage: 0,
+    );
+    _backgroundController = PageController(
+      initialPage: 0,
+    );
+
     _controller.addListener(() {
-      // print(_controller.offset);
       _currentOffset = _controller.offset * (1 / _viewportFraction);
-
       _backgroundController.jumpTo(_currentOffset);
-      // print("_currentOffset: $_currentOffset");
     });
+  }
 
-    _backgroundController.addListener(() {
-      // print(_backgroundController.offset);
-    });
+  @override
+  void dispose() {
+    super.dispose();
+
+    _controller.dispose();
+    _backgroundController.dispose();
   }
 
   @override
@@ -72,7 +75,7 @@ class _MovieListState extends State<MovieList> {
                         // print("_controller offste : ${_controller.offset}");
                       });
                     },
-                    physics: BouncingScrollPhysics(),
+                    // physics: BouncingScrollPhysics(),
                     controller: _controller,
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
