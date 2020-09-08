@@ -67,35 +67,39 @@ class _MovieListState extends State<MovieList> {
               ),
               Expanded(
                 flex: 9,
-                child: PageView.builder(
-                    onPageChanged: (pos) {
-                      setState(() {
-                        // print('_currentPos: $_currentPos');
-                        _currentPos = pos;
-                        // print("_controller offste : ${_controller.offset}");
-                      });
-                    },
-                    // physics: BouncingScrollPhysics(),
-                    controller: _controller,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      bool isCurrentPage = _currentPos == index;
+                child: NotificationListener<OverscrollIndicatorNotification>(
+                  onNotification: (OverscrollIndicatorNotification overscroll) {
+                    overscroll.disallowGlow();
+                    return;
+                  },
+                  child: PageView.builder(
+                      onPageChanged: (pos) {
+                        setState(() {
+                          _currentPos = pos;
+                        });
+                      },
+                      // physics: BouncingScrollPhysics(),
+                      controller: _controller,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        bool isCurrentPage = _currentPos == index;
 
-                      return AnimatedPadding(
-                        duration: Duration(milliseconds: 200),
-                        padding: isCurrentPage
-                            ? EdgeInsets.only(top: 0)
-                            : EdgeInsets.only(top: _topMargin),
-                        child: AnimatedOpacity(
+                        return AnimatedPadding(
                           duration: Duration(milliseconds: 200),
-                          opacity: isCurrentPage ? 1.0 : 0.7,
-                          child: Container(
-                            child: MovieSummary(),
+                          padding: isCurrentPage
+                              ? EdgeInsets.only(top: 0)
+                              : EdgeInsets.only(top: _topMargin),
+                          child: AnimatedOpacity(
+                            duration: Duration(milliseconds: 200),
+                            opacity: isCurrentPage ? 1.0 : 0.7,
+                            child: Container(
+                              child: MovieSummary(),
+                            ),
                           ),
-                        ),
-                      );
-                    }),
+                        );
+                      }),
+                ),
               ),
             ],
           ),
