@@ -24,45 +24,49 @@ class _MovieDetailState extends State<MovieDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Stack(
-          children: [
-            Image(
-              width: double.infinity,
-              image: NetworkImage("https://picsum.photos/200/300"),
-              fit: BoxFit.contain,
-            ),
-            NotificationListener<OverscrollIndicatorNotification>(
-              onNotification: (OverscrollIndicatorNotification overscroll) {
-                overscroll.disallowGlow();
-                return;
-              },
-              child: DraggableScrollableSheet(
-                  maxChildSize: 0.75,
-                  builder: (context, scrollController) {
-                    return Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              BorderRadius.vertical(top: Radius.circular(30))),
-                      child: SingleChildScrollView(
-                        controller: scrollController,
-                        child: Column(
-                          children: [
-                            MovieTitle(),
-                            BadgesList(),
-                            RatingContainer(),
-                            DirectorText(),
-                            SizedBox(height: 30),
-                            ActorContianer(),
-                            Introduction(),
-                          ],
+        child: Hero(
+          tag: widget.index,
+          child: Stack(
+            children: [
+              Image(
+                width: double.infinity,
+                image: NetworkImage("https://picsum.photos/200/300"),
+                fit: BoxFit.contain,
+              ),
+              NotificationListener<OverscrollIndicatorNotification>(
+                onNotification: (OverscrollIndicatorNotification overscroll) {
+                  overscroll.disallowGlow();
+                  return;
+                },
+                child: DraggableScrollableSheet(
+                    maxChildSize: 0.75,
+                    minChildSize: 0.2,
+                    builder: (context, scrollController) {
+                      return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(30))),
+                        child: SingleChildScrollView(
+                          controller: scrollController,
+                          child: Column(
+                            children: [
+                              MovieTitle(),
+                              BadgesList(),
+                              RatingContainer(),
+                              DirectorText(),
+                              SizedBox(height: 30),
+                              ActorContianer(),
+                              Introduction(),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  }),
-            )
-          ],
+                      );
+                    }),
+              )
+            ],
+          ),
         ),
       ),
     );
