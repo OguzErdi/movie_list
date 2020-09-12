@@ -13,8 +13,8 @@ class Poster extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => MovieDetail(index: index)));
+        // Navigator.of(context).push(
+        //     MaterialPageRoute(builder: (context) => MovieDetail(index: index)));
       },
       child: Hero(
         tag: index,
