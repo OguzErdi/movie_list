@@ -7,6 +7,12 @@ import 'poster.dart';
 import 'rating_container.dart';
 
 class MovieSummary extends StatelessWidget {
+  final int index;
+
+  const MovieSummary({
+    this.index,
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class MovieSummary extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Poster(),
+            Poster(index: index),
             MovieTitle(),
             BadgesList(),
             RatingContainer(),

@@ -94,7 +94,7 @@ class _MovieListState extends State<MovieList> {
                             duration: Duration(milliseconds: 200),
                             opacity: isCurrentPage ? 1.0 : 0.7,
                             child: Container(
-                              child: MovieSummary(),
+                              child: MovieSummary(index: index),
                             ),
                           ),
                         );

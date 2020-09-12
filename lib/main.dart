@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/app/movie_list/movie_list.dart';
+
+import 'app/shell.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,11 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MovieList(),
+      home: Shell(),
     );
   }
 }
