@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'movie_detail/movie_detail.dart';
 import 'movie_list/movie_list.dart';
 
 class Shell extends StatelessWidget {

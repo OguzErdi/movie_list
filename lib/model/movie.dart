@@ -1,4 +1,3 @@
-import 'dart:html';
 
 class Movie {
   String title;
