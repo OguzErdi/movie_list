@@ -26,12 +26,13 @@ class _MovieDetailState extends State<MovieDetail> {
       tag: widget.index,
       child: Material(
         child: Stack(
+          alignment: Alignment.center,
           children: [
             Image(
               width: double.infinity,
               height: double.infinity,
               image: NetworkImage("https://picsum.photos/200/300"),
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.contain,
             ),
             NotificationListener<OverscrollIndicatorNotification>(
               onNotification: (OverscrollIndicatorNotification overscroll) {
@@ -48,7 +49,9 @@ class _MovieDetailState extends State<MovieDetail> {
                           color: Colors.white,
                           borderRadius:
                               BorderRadius.vertical(top: Radius.circular(30))),
+                      //must be a scrollable widget. it can be Listview
                       child: SingleChildScrollView(
+                        physics: BouncingScrollPhysics(),
                         controller: scrollController,
                         child: Column(
                           children: [
