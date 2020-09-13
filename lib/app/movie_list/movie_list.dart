@@ -68,10 +68,10 @@ class _MovieListState extends State<MovieList> {
               Expanded(
                 flex: 9,
                 child: NotificationListener<OverscrollIndicatorNotification>(
-                  onNotification: (OverscrollIndicatorNotification overscroll) {
-                    overscroll.disallowGlow();
-                    return;
-                  },
+                  // onNotification: (OverscrollIndicatorNotification overscroll) {
+                  //   overscroll.disallowGlow();
+                  //   return;
+                  // },
                   child: PageView.builder(
                       onPageChanged: (pos) {
                         setState(() {
