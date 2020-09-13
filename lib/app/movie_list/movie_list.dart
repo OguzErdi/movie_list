@@ -36,9 +36,9 @@ class _MovieListState extends State<MovieList> {
       _backgroundController.jumpTo(_currentOffset);
     });
 
-    MovieServiceFromFile(context)
-        .getMoviesAsync()
-        .then((value) => movies = value);
+    // MovieServiceFromFile(context)
+    //     .getMoviesAsync()
+    //     .then((value) => movies = value);
   }
 
   @override
@@ -52,74 +52,81 @@ class _MovieListState extends State<MovieList> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: movies == null
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : Stack(
-              children: [
-                PageView.builder(
-                    pageSnapping: false,
-                    reverse: true,
-                    itemCount: movies.length,
-                    physics: NeverScrollableScrollPhysics(),
-                    controller: _backgroundController,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        color: index % 2 == 0 ? Colors.teal : Colors.amber,
-                      );
-                    }),
-                Column(
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: SizedBox(),
-                    ),
-                    Expanded(
-                      flex: 9,
-                      child:
-                          NotificationListener<OverscrollIndicatorNotification>(
-                        onNotification:
-                            (OverscrollIndicatorNotification overscroll) {
-                          overscroll.disallowGlow();
-                          return;
-                        },
-                        child: PageView.builder(
-                            onPageChanged: (pos) {
-                              setState(() {
-                                _currentPos = pos;
-                              });
-                            },
-                            controller: _controller,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: movies.length,
-                            itemBuilder: (context, index) {
-                              bool isCurrentPage = _currentPos == index;
+        child: FutureBuilder(
+            future: MovieServiceFromFile(context).getMoviesAsync(),
+            builder: (context, value) {
 
-                              return AnimatedPadding(
-                                duration: Duration(milliseconds: 200),
-                                padding: isCurrentPage
-                                    ? EdgeInsets.only(top: 0)
-                                    : EdgeInsets.only(top: _topMargin),
-                                child: AnimatedOpacity(
-                                  duration: Duration(milliseconds: 200),
-                                  opacity: isCurrentPage ? 1.0 : 0.7,
-                                  child: Container(
-                                    child: MovieSummary(index: index),
-                                  ),
-                                ),
-                              );
-                            }),
+              if (!value.hasData) {
+                return Center(
+                  child: Text("No Data"),
+                );
+              }
+
+              movies = value.data;
+              return Stack(
+                children: [
+                  PageView.builder(
+                      pageSnapping: false,
+                      reverse: true,
+                      itemCount: movies.length,
+                      physics: NeverScrollableScrollPhysics(),
+                      controller: _backgroundController,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          color: index % 2 == 0 ? Colors.teal : Colors.amber,
+                        );
+                      }),
+                  Column(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: SizedBox(),
                       ),
-                    ),
-                  ],
-                ),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: BuyTicketButton(),
-                ),
-              ],
-            ),
-    );
+                      Expanded(
+                        flex: 9,
+                        child: NotificationListener<
+                            OverscrollIndicatorNotification>(
+                          onNotification:
+                              (OverscrollIndicatorNotification overscroll) {
+                            overscroll.disallowGlow();
+                            return;
+                          },
+                          child: PageView.builder(
+                              onPageChanged: (pos) {
+                                setState(() {
+                                  _currentPos = pos;
+                                });
+                              },
+                              controller: _controller,
+                              scrollDirection: Axis.horizontal,
+                              itemCount: movies.length,
+                              itemBuilder: (context, index) {
+                                bool isCurrentPage = _currentPos == index;
+
+                                return AnimatedPadding(
+                                  duration: Duration(milliseconds: 200),
+                                  padding: isCurrentPage
+                                      ? EdgeInsets.only(top: 0)
+                                      : EdgeInsets.only(top: _topMargin),
+                                  child: AnimatedOpacity(
+                                    duration: Duration(milliseconds: 200),
+                                    opacity: isCurrentPage ? 1.0 : 0.7,
+                                    child: Container(
+                                      child: MovieSummary(index: index),
+                                    ),
+                                  ),
+                                );
+                              }),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    child: BuyTicketButton(),
+                  ),
+                ],
+              );
+            }));
   }
 }
