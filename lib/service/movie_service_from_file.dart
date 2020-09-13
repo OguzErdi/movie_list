@@ -10,18 +10,19 @@ class MovieServiceFromFile {
   getMoviesWithFuture() {
     Future<String> movieJson =
         DefaultAssetBundle.of(context).loadString("assets/data/movies.json");
-    movieJson.then((value) {
-      // debugPrint("json string: $value");
-      List movies = json.decode(value);
-      debugPrint("movies list length: ${movies.length.toString()}");
+    return movieJson;
+    // movieJson.then((value) {
+    //   // debugPrint("json string: $value");
+    //   List movies = json.decode(value);
+    //   debugPrint("movies list length: ${movies.length.toString()}");
 
-      movies.forEach((element) {
-        //to get element use key values in square braces if a dynamic list 
-        debugPrint(element['director']['name']);
-      });
+    //   movies.forEach((element) {
+    //     //to get element use key values in square braces if a dynamic list 
+    //     debugPrint(element['director']['name']);
+    //   });
 
-      return movies;
-    });
+    //   return movies;
+    // });
   }
 
   Future getMoviesAsync() async {
