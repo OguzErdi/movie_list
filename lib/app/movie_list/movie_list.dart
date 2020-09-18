@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:movie_app/model/actor.dart';
+import 'package:movie_app/model/movie.dart';
 import 'package:movie_app/service/movie_from_file_service.dart';
 
 import 'elements/buy_ticket_button.dart';
@@ -19,7 +21,7 @@ class _MovieListState extends State<MovieList> {
   PageController _backgroundController;
   int _currentPos = 0;
   double _currentOffset = 0;
-  List movies;
+  List<Movie> movies;
 
   @override
   void initState() {
@@ -65,7 +67,7 @@ class _MovieListState extends State<MovieList> {
               }
 
               // movies = value.data;
-              List movies = json.decode(value.data);
+              movies = (json.decode(value.data) as List).map((item) => Movie.fromJson(item)).toList();
               return Stack(
                 children: [
                   PageView.builder(

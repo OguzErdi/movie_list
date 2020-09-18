@@ -14,7 +14,7 @@ class Movie  {
 			name: json['name'],
 			director: json['director'] != null ? new Director.fromJson(json['director']) : null,
 			year: json['year'],
-			actor: json['actor'] != null ? json['actor'].map((v) => new Actor.fromJson(v)).toList() : null,
+			actor: json['actor'] != null ?  (json['actor'] as List).map((map) => Actor.fromJson(map)).toList() : null,
 		);
 	}
 
