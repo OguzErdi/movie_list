@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:movie_app/service/movie_service_from_file.dart';
+import 'package:movie_app/service/movie_from_file_service.dart';
 
 import 'elements/buy_ticket_button.dart';
 import 'elements/movie_summary.dart';
@@ -55,7 +55,7 @@ class _MovieListState extends State<MovieList> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: FutureBuilder(
-            future: MovieServiceFromFile(context).getMoviesWithFuture(),
+            future: MovieFromFileService(context).getMoviesWithFuture(),
             builder: (context, value) {
 
               if (!value.hasData) {

@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 
-class MovieServiceFromFile {
+class MovieFromFileService {
   final BuildContext context;
 
-  MovieServiceFromFile(this.context) {}
+  MovieFromFileService(this.context);
 
   //dont wait and return future immediatly
   getMoviesWithFuture() {
@@ -28,8 +28,11 @@ class MovieServiceFromFile {
   }
 
   //wait future call completed
+  //async methods should return Future
   Future getMoviesAsync() async {
     var movieJson = await DefaultAssetBundle.of(context).loadString("assets/data/movies.json");
+    //can get as Map object without creating object
+    // Map<String, dynamic> movies = json.decode(movieJson);
     List movies = json.decode(movieJson);
 
     return movies;
