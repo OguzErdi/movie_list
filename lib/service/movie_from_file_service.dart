@@ -7,10 +7,12 @@ class MovieServiceFromFile {
 
   MovieServiceFromFile(this.context) {}
 
+  //dont wait and return future immediatly
   getMoviesWithFuture() {
     Future<String> movieJson =
         DefaultAssetBundle.of(context).loadString("assets/data/movies.json");
     return movieJson;
+    
     // movieJson.then((value) {
     //   // debugPrint("json string: $value");
     //   List movies = json.decode(value);
@@ -25,6 +27,7 @@ class MovieServiceFromFile {
     // });
   }
 
+  //wait future call completed
   Future getMoviesAsync() async {
     var movieJson = await DefaultAssetBundle.of(context).loadString("assets/data/movies.json");
     List movies = json.decode(movieJson);
