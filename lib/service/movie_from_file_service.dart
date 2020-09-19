@@ -39,6 +39,7 @@ class MovieFromFileService {
     return movies;
   }
 
+  //get complex object from json 
   List<Movie> getMoviesFromJson(String moviesJson) {
     return (json.decode(moviesJson) as List).map((item) => Movie.fromJson(item)).toList();
   }
