@@ -1,9 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:movie_app/model/actor.dart';
-import 'package:movie_app/model/movie.dart';
-import 'package:movie_app/service/movie_from_file_service.dart';
 
 import 'elements/buy_ticket_button.dart';
 import 'elements/movie_summary.dart';
@@ -21,7 +16,6 @@ class _MovieListState extends State<MovieList> {
   PageController _backgroundController;
   int _currentPos = 0;
   double _currentOffset = 0;
-  List<Movie> movies;
 
   @override
   void initState() {
@@ -56,24 +50,12 @@ class _MovieListState extends State<MovieList> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: FutureBuilder(
-            future: MovieFromFileService(context).getMoviesWithFuture(),
-            builder: (context, value) {
-
-              if (!value.hasData) {
-                return Center(
-                  child: Text("No Data"),
-                );
-              }
-
-              // movies = value.data;
-              movies = MovieFromFileService(context).getMoviesFromJson(value.data);
-              return Stack(
+        child: Stack(
                 children: [
                   PageView.builder(
                       pageSnapping: false,
                       reverse: true,
-                      itemCount: movies.length,
+                      itemCount: 15,
                       physics: NeverScrollableScrollPhysics(),
                       controller: _backgroundController,
                       itemBuilder: (context, index) {
@@ -104,7 +86,7 @@ class _MovieListState extends State<MovieList> {
                               },
                               controller: _controller,
                               scrollDirection: Axis.horizontal,
-                              itemCount: movies.length,
+                              itemCount: 15,
                               itemBuilder: (context, index) {
                                 bool isCurrentPage = _currentPos == index;
 
@@ -131,7 +113,7 @@ class _MovieListState extends State<MovieList> {
                     child: BuyTicketButton(),
                   ),
                 ],
-              );
-            }));
+              ),
+            );
   }
 }
