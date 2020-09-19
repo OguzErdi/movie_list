@@ -67,7 +67,7 @@ class _MovieListState extends State<MovieList> {
               }
 
               // movies = value.data;
-              movies = (json.decode(value.data) as List).map((item) => Movie.fromJson(item)).toList();
+              movies = MovieFromFileService(context).getMoviesFromJson(value.data);
               return Stack(
                 children: [
                   PageView.builder(

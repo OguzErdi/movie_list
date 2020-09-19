@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
+import 'package:movie_app/model/movie.dart';
 
 class MovieFromFileService {
   final BuildContext context;
@@ -36,5 +37,9 @@ class MovieFromFileService {
     List movies = json.decode(movieJson);
 
     return movies;
+  }
+
+  List<Movie> getMoviesFromJson(String moviesJson) {
+    return (json.decode(moviesJson) as List).map((item) => Movie.fromJson(item)).toList();
   }
 }
