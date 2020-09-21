@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_detail/widgets/director_text.dart';
 import 'package:movie_app/screens/movie_detail/widgets/introduction.dart';
-import 'package:movie_app/screens/movie_list/widgets/badge_list.dart';
-import 'package:movie_app/screens/movie_list/widgets/movie_title.dart';
+import 'package:movie_app/widgets/badge_container.dart';
+import 'package:movie_app/widgets/movie_title.dart';
 import 'package:movie_app/screens/movie_list/widgets/rating_container.dart';
 
 import 'Widgets/actor_container.dart';
@@ -56,7 +56,7 @@ class _MovieDetailState extends State<MovieDetail> {
                         child: Column(
                           children: [
                             MovieTitle(),
-                            BadgesList(),
+                            BadgeContainer(),
                             RatingContainer(),
                             DirectorText(),
                             SizedBox(height: 30),

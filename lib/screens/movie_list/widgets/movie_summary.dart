@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_detail/movie_detail.dart';
 
-import 'badge_list.dart';
-import 'icon_more.dart';
-import 'movie_title.dart';
+import '../../../widgets/badge_container.dart';
+import '../../../widgets/icon_more.dart';
+import '../../../widgets/movie_title.dart';
 import 'poster.dart';
 import 'rating_container.dart';
 
@@ -46,7 +46,7 @@ class MovieSummary extends StatelessWidget {
                 children: [
                   Poster(index: index),
                   MovieTitle(),
-                  BadgesList(),
+                  BadgeContainer(),
                   RatingContainer(),
                   IconMore(),
                 ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/movie_list/widgets/buy_ticket_button.dart';
+import 'package:movie_app/widgets/buy_ticket_button.dart';
 import 'package:movie_app/screens/movie_list/widgets/movie_summary.dart';
 
 class MovieList extends StatefulWidget {
