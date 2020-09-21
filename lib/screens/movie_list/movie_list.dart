@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'elements/buy_ticket_button.dart';
-import 'elements/movie_summary.dart';
+import 'package:movie_app/screens/movie_list/widgets/buy_ticket_button.dart';
+import 'package:movie_app/screens/movie_list/widgets/movie_summary.dart';
 
 class MovieList extends StatefulWidget {
   @override
@@ -33,10 +32,6 @@ class _MovieListState extends State<MovieList> {
       _currentOffset = _controller.offset * (1 / _viewportFraction);
       _backgroundController.jumpTo(_currentOffset);
     });
-
-    // MovieServiceFromFile(context)
-    //     .getMoviesAsync()
-    //     .then((value) => movies = value);
   }
 
   @override

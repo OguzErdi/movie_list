@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/app/movie_detail/elements/actor.dart';
+import 'package:movie_app/screens/movie_detail/widgets/actor.dart';
 
 class ActorContianer extends StatelessWidget {
   @override

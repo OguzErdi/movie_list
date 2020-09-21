@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/screens/shell.dart';
 
-import 'app/shell.dart';
 
 void main() {
   runApp(MyApp());

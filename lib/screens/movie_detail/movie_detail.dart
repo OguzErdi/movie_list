@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/app/movie_list/elements/badge_list.dart';
-import 'package:movie_app/app/movie_list/elements/movie_title.dart';
-import 'package:movie_app/app/movie_list/elements/rating_container.dart';
+import 'package:movie_app/screens/movie_detail/widgets/director_text.dart';
+import 'package:movie_app/screens/movie_detail/widgets/introduction.dart';
+import 'package:movie_app/screens/movie_list/widgets/badge_list.dart';
+import 'package:movie_app/screens/movie_list/widgets/movie_title.dart';
+import 'package:movie_app/screens/movie_list/widgets/rating_container.dart';
 
-import 'elements/actor_container.dart';
-import 'elements/director_text.dart';
-import 'elements/introduction.dart';
+import 'Widgets/actor_container.dart';
 
 class MovieDetail extends StatefulWidget {
   final int index;

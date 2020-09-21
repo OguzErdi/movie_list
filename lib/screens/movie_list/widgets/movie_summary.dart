@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/app/movie_detail/movie_detail.dart';
+import 'package:movie_app/screens/movie_detail/movie_detail.dart';
 
 import 'badge_list.dart';
 import 'icon_more.dart';
