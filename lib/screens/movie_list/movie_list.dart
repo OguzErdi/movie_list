@@ -45,70 +45,61 @@ class _MovieListState extends State<MovieList> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Stack(
-                children: [
-                  PageView.builder(
-                      pageSnapping: false,
-                      reverse: true,
-                      itemCount: 15,
-                      physics: NeverScrollableScrollPhysics(),
-                      controller: _backgroundController,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          color: index % 2 == 0 ? Colors.teal : Colors.amber,
-                        );
-                      }),
-                  Column(
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: SizedBox(),
-                      ),
-                      Expanded(
-                        flex: 9,
-                        child: NotificationListener<
-                            OverscrollIndicatorNotification>(
-                          onNotification:
-                              (OverscrollIndicatorNotification overscroll) {
-                            overscroll.disallowGlow();
-                            return;
-                          },
-                          child: PageView.builder(
-                              onPageChanged: (pos) {
-                                setState(() {
-                                  _currentPos = pos;
-                                });
-                              },
-                              controller: _controller,
-                              scrollDirection: Axis.horizontal,
-                              itemCount: 15,
-                              itemBuilder: (context, index) {
-                                bool isCurrentPage = _currentPos == index;
+      child: Stack(
+        children: [
+          PageView.builder(
+              pageSnapping: false,
+              reverse: true,
+              itemCount: 15,
+              physics: NeverScrollableScrollPhysics(),
+              controller: _backgroundController,
+              itemBuilder: (context, index) {
+                return Container(
+                  color: index % 2 == 0 ? Colors.teal : Colors.amber,
+                );
+              }),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: NotificationListener<OverscrollIndicatorNotification>(
+              onNotification: (OverscrollIndicatorNotification overscroll) {
+                overscroll.disallowGlow();
+                return;
+              },
+              child: SizedBox(
+                height: 500,
+                child: PageView.builder(
+                    onPageChanged: (pos) {
+                      setState(() {
+                        _currentPos = pos;
+                      });
+                    },
+                    controller: _controller,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 15,
+                    itemBuilder: (context, index) {
+                      bool isCurrentPage = _currentPos == index;
 
-                                return AnimatedPadding(
-                                  duration: Duration(milliseconds: 200),
-                                  padding: isCurrentPage
-                                      ? EdgeInsets.only(top: 0)
-                                      : EdgeInsets.only(top: _topMargin),
-                                  child: AnimatedOpacity(
-                                    duration: Duration(milliseconds: 200),
-                                    opacity: isCurrentPage ? 1.0 : 0.7,
-                                    child: Container(
-                                      child: MovieSummary(index: index),
-                                    ),
-                                  ),
-                                );
-                              }),
+                      return AnimatedPadding(
+                        duration: Duration(milliseconds: 200),
+                        padding: isCurrentPage
+                            ? EdgeInsets.only(top: 0)
+                            : EdgeInsets.only(top: _topMargin),
+                        child: AnimatedOpacity(
+                          duration: Duration(milliseconds: 200),
+                          opacity: isCurrentPage ? 1.0 : 0.7,
+                          child: MovieSummary(index: index),
                         ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    alignment: Alignment.bottomCenter,
-                    child: BuyTicketButton(),
-                  ),
-                ],
+                      );
+                    }),
               ),
-            );
+            ),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: BuyTicketButton(),
+          ),
+        ],
+      ),
+    );
   }
 }
