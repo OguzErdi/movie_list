@@ -23,8 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  equatable:
-  json_annotation: ^3.0.1
   http: ^0.12.2
 
 
@@ -36,7 +34,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   json_serializable: ^3.4.1
-  build_runner: ^1.10.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -50,8 +47,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/data/movies.json
+  # assets:
+  #   - assets/data/movies.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

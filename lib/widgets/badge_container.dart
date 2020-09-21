@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'badge.dart';
 
-class BadgesList extends StatelessWidget {
-  const BadgesList({
+class BadgeContainer extends StatelessWidget {
+  const BadgeContainer({
     Key key,
   }) : super(key: key);
 
