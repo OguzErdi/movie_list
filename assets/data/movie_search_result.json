@@ -1,0 +1,869 @@
+{
+    "@meta": {
+        "operation": "Search",
+        "requestId": "196db28a-a86c-4c40-a1f6-4132f9a8f6e4",
+        "serviceTimeMs": 37.911318
+    },
+    "@type": "imdb.api.find.response",
+    "query": "galaxy",
+    "results": [
+        {
+            "id": "/title/tt0404977/",
+            "image": {
+                "height": 703,
+                "id": "/title/tt0404977/images/rm3549094912",
+                "url": "https://m.media-amazon.com/images/M/MV5BOTBhMGNhMTUtNTUwNS00NmYwLWI1ZmEtZWVlMTU4NDE3ZTFhXkEyXkFqcGdeQXVyMTQ2MjQyNDc@._V1_.jpg",
+                "width": 450
+            },
+            "runningTimeInMinutes": 91,
+            "title": "Battle for the Lost Planet",
+            "titleType": "video",
+            "year": 1986,
+            "principals": [
+                {
+                    "id": "/name/nm0593919/",
+                    "legacyNameText": "Mitler, Matt",
+                    "name": "Matt Mitler",
+                    "billing": 1,
+                    "category": "actor",
+                    "characters": [
+                        "Harry Trent"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Harry Trent"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0184657/",
+                    "legacyNameText": "Coward, Denise",
+                    "name": "Denise Coward",
+                    "billing": 2,
+                    "category": "actress",
+                    "characters": [
+                        "Dana"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Dana"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm1585153/",
+                    "legacyNameText": "Gentissi, Joe",
+                    "name": "Joe Gentissi",
+                    "billing": 3,
+                    "category": "actor",
+                    "characters": [
+                        "Mad Dog Kelly"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Mad Dog Kelly"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "akas": [
+                "Galaxy"
+            ],
+            "id": "/name/nm1184123/",
+            "legacyNameText": "San Juan, Galaxy",
+            "name": "Galaxy San Juan",
+            "knownFor": [
+                {
+                    "crew": [
+                        {
+                            "category": "make_up_department",
+                            "job": "key makeup artist"
+                        }
+                    ],
+                    "summary": {
+                        "category": "make_up_department",
+                        "displayYear": "2019"
+                    },
+                    "id": "/title/tt2935510/",
+                    "title": "Ad Astra",
+                    "titleType": "movie",
+                    "year": 2019
+                },
+                {
+                    "crew": [
+                        {
+                            "category": "make_up_department",
+                            "job": "makeup department head"
+                        }
+                    ],
+                    "summary": {
+                        "category": "make_up_department",
+                        "displayYear": "2014"
+                    },
+                    "disambiguation": "I",
+                    "id": "/title/tt2980592/",
+                    "title": "The Guest",
+                    "titleType": "movie",
+                    "year": 2014
+                },
+                {
+                    "crew": [
+                        {
+                            "category": "make_up_department",
+                            "job": "makeup department head"
+                        }
+                    ],
+                    "summary": {
+                        "category": "make_up_department",
+                        "displayYear": "2020"
+                    },
+                    "id": "/title/tt9484998/",
+                    "title": "Palm Springs",
+                    "titleType": "movie",
+                    "year": 2020
+                },
+                {
+                    "crew": [
+                        {
+                            "category": "make_up_department",
+                            "job": "hair stylist: second unit"
+                        },
+                        {
+                            "category": "make_up_department",
+                            "job": "makeup artist: second unit"
+                        }
+                    ],
+                    "summary": {
+                        "category": "make_up_department",
+                        "displayYear": "2006"
+                    },
+                    "id": "/title/tt0490076/",
+                    "title": "All the Boys Love Mandy Lane",
+                    "titleType": "movie",
+                    "year": 2006
+                }
+            ]
+        },
+        {
+            "id": "/title/tt0239429/",
+            "image": {
+                "height": 477,
+                "id": "/title/tt0239429/images/rm3103396352",
+                "url": "https://m.media-amazon.com/images/M/MV5BYTcxYjRjMTktYjZjNC00NTJiLTg5ZGQtNTNmODY0N2E5YWMzXkEyXkFqcGdeQXVyNDY5NjU5MDE@._V1_.jpg",
+                "width": 342
+            },
+            "runningTimeInMinutes": 75,
+            "title": "Gingakei",
+            "titleType": "movie",
+            "year": 1967
+        },
+        {
+            "id": "/title/tt2299435/",
+            "runningTimeInMinutes": 4,
+            "title": "Galaxy",
+            "titleType": "video",
+            "year": 2012
+        },
+        {
+            "disambiguation": "I",
+            "id": "/name/nm0301732/",
+            "legacyNameText": "Galaxy (I)",
+            "name": "Galaxy",
+            "knownFor": [
+                {
+                    "cast": [
+                        {
+                            "billing": 29,
+                            "category": "self",
+                            "characters": [
+                                "Self"
+                            ],
+                            "roles": [
+                                {
+                                    "character": "Self"
+                                }
+                            ]
+                        }
+                    ],
+                    "summary": {
+                        "category": "self",
+                        "characters": [
+                            "Self"
+                        ],
+                        "displayYear": "1985"
+                    },
+                    "id": "/title/tt0089444/",
+                    "title": "Krush Groove",
+                    "titleType": "movie",
+                    "year": 1985
+                }
+            ]
+        },
+        {
+            "akas": [
+                "Galaxy"
+            ],
+            "disambiguation": "III",
+            "id": "/name/nm11324797/",
+            "legacyNameText": "Jeter, Jennifer (III)",
+            "name": "Jennifer Jeter",
+            "knownFor": [
+                {
+                    "cast": [
+                        {
+                            "as": "Galaxy",
+                            "category": "actress",
+                            "characters": [
+                                "Sherrie Starr"
+                            ],
+                            "roles": [
+                                {
+                                    "character": "Sherrie Starr"
+                                }
+                            ]
+                        }
+                    ],
+                    "summary": {
+                        "category": "actress",
+                        "characters": [
+                            "Sherrie Starr"
+                        ]
+                    },
+                    "id": "/title/tt10156156/",
+                    "title": "Shoot, the Movie",
+                    "titleType": "movie"
+                }
+            ]
+        },
+        {
+            "id": "/title/tt0177789/",
+            "image": {
+                "height": 1187,
+                "id": "/title/tt0177789/images/rm2608676352",
+                "url": "https://m.media-amazon.com/images/M/MV5BNmZlNTY5YjQtZTU5ZC00MzcyLWI1NDMtNjA0ZjQxMmQwYjJmL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+                "width": 838
+            },
+            "runningTimeInMinutes": 102,
+            "title": "Galaxy Quest",
+            "titleType": "movie",
+            "year": 1999,
+            "principals": [
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0000741/",
+                    "legacyNameText": "Allen, Tim (I)",
+                    "name": "Tim Allen",
+                    "billing": 1,
+                    "category": "actor",
+                    "characters": [
+                        "Jason Nesmith"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Jason Nesmith",
+                            "characterId": "/character/ch0008366/"
+                        }
+                    ]
+                },
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0000244/",
+                    "legacyNameText": "Weaver, Sigourney (I)",
+                    "name": "Sigourney Weaver",
+                    "billing": 2,
+                    "category": "actress",
+                    "characters": [
+                        "Gwen DeMarco"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Gwen DeMarco",
+                            "characterId": "/character/ch0008365/"
+                        }
+                    ]
+                },
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0000614/",
+                    "legacyNameText": "Rickman, Alan (I)",
+                    "name": "Alan Rickman",
+                    "billing": 3,
+                    "category": "actor",
+                    "characters": [
+                        "Alexander Dane"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Alexander Dane",
+                            "characterId": "/character/ch0008362/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "/title/tt0082431/",
+            "image": {
+                "height": 2961,
+                "id": "/title/tt0082431/images/rm487077120",
+                "url": "https://m.media-amazon.com/images/M/MV5BNTE0MjkzMWItYTI3ZS00ZGRiLTllOTktMGMyNzlkMjRmZWZmXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+                "width": 2011
+            },
+            "runningTimeInMinutes": 81,
+            "title": "Galaxy of Terror",
+            "titleType": "movie",
+            "year": 1981,
+            "principals": [
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0001902/",
+                    "legacyNameText": "Albert, Edward (I)",
+                    "name": "Edward Albert",
+                    "billing": 1,
+                    "category": "actor",
+                    "characters": [
+                        "Cabren"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Cabren"
+                        }
+                    ]
+                },
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0602844/",
+                    "legacyNameText": "Moran, Erin (I)",
+                    "name": "Erin Moran",
+                    "billing": 2,
+                    "category": "actress",
+                    "characters": [
+                        "Alluma"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Alluma"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0001827/",
+                    "legacyNameText": "Walston, Ray",
+                    "name": "Ray Walston",
+                    "billing": 3,
+                    "category": "actor",
+                    "characters": [
+                        "Kore"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Kore"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "/title/tt0115108/",
+            "image": {
+                "height": 475,
+                "id": "/title/tt0115108/images/rm1825413376",
+                "url": "https://m.media-amazon.com/images/M/MV5BNDUxODg4MzE5NV5BMl5BanBnXkFtZTYwNDA0OTc4._V1_.jpg",
+                "width": 261
+            },
+            "runningTimeInMinutes": 30,
+            "nextEpisode": "/title/tt0853340/",
+            "numberOfEpisodes": 52,
+            "seriesEndYear": 1999,
+            "seriesStartYear": 1996,
+            "title": "Beast Wars: Transformers",
+            "titleType": "tvSeries",
+            "year": 1996,
+            "principals": [
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0573926/",
+                    "legacyNameText": "McNeil, Scott (I)",
+                    "name": "Scott McNeil",
+                    "category": "actor",
+                    "characters": [
+                        "Rattrap",
+                        "Dinobot",
+                        "Waspinator"
+                    ],
+                    "endYear": 1999,
+                    "episodeCount": 52,
+                    "roles": [
+                        {
+                            "character": "Rattrap",
+                            "characterId": "/character/ch0003391/"
+                        },
+                        {
+                            "character": "Dinobot",
+                            "characterId": "/character/ch0003389/"
+                        },
+                        {
+                            "character": "Waspinator",
+                            "characterId": "/character/ch0003390/"
+                        }
+                    ],
+                    "startYear": 1996
+                },
+                {
+                    "id": "/name/nm0149942/",
+                    "legacyNameText": "Chalk, Garry",
+                    "name": "Garry Chalk",
+                    "category": "actor",
+                    "characters": [
+                        "Optimus Primal",
+                        "Protohuman",
+                        "Generation1 Megatron"
+                    ],
+                    "endYear": 1999,
+                    "episodeCount": 51,
+                    "roles": [
+                        {
+                            "character": "Optimus Primal",
+                            "characterId": "/character/ch0107881/"
+                        },
+                        {
+                            "character": "Protohuman",
+                            "characterId": "/character/ch0451198/"
+                        },
+                        {
+                            "character": "Generation1 Megatron",
+                            "characterId": "/character/ch0003330/"
+                        }
+                    ],
+                    "startYear": 1996
+                },
+                {
+                    "id": "/name/nm0003944/",
+                    "legacyNameText": "Corlett, Ian James",
+                    "name": "Ian James Corlett",
+                    "category": "actor",
+                    "characters": [
+                        "Cheetor",
+                        "Maximal Computer",
+                        "Sentinel"
+                    ],
+                    "endYear": 1999,
+                    "episodeCount": 50,
+                    "roles": [
+                        {
+                            "character": "Cheetor",
+                            "characterId": "/character/ch0003411/"
+                        },
+                        {
+                            "character": "Maximal Computer",
+                            "characterId": "/character/ch0451196/"
+                        },
+                        {
+                            "character": "Sentinel",
+                            "characterId": "/character/ch0412371/"
+                        }
+                    ],
+                    "startYear": 1996
+                }
+            ]
+        },
+        {
+            "id": "/title/tt2039380/",
+            "image": {
+                "height": 1778,
+                "id": "/title/tt2039380/images/rm1446175488",
+                "url": "https://m.media-amazon.com/images/M/MV5BNDQyNTQyNzkxNl5BMl5BanBnXkFtZTgwMTU4NTkyNzE@._V1_.jpg",
+                "width": 1200
+            },
+            "runningTimeInMinutes": 83,
+            "title": "Star Raiders: The Adventures of Saber Raine",
+            "titleType": "movie",
+            "year": 2017,
+            "principals": [
+                {
+                    "id": "/name/nm0000680/",
+                    "legacyNameText": "Van Dien, Casper",
+                    "name": "Casper Van Dien",
+                    "category": "actor",
+                    "characters": [
+                        "Saber Raine"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Saber Raine"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0001686/",
+                    "legacyNameText": "Rothrock, Cynthia",
+                    "name": "Cynthia Rothrock",
+                    "category": "actress",
+                    "characters": [
+                        "Kandra Syn"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Kandra Syn"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0506699/",
+                    "legacyNameText": "Lew, James",
+                    "name": "James Lew",
+                    "category": "actor",
+                    "characters": [
+                        "Sinjin"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Sinjin"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "/title/tt11044122/",
+            "image": {
+                "height": 600,
+                "id": "/title/tt11044122/images/rm2814938625",
+                "url": "https://m.media-amazon.com/images/M/MV5BOWM5NzVlN2ItYWRiNC00YjQ3LTk1NWYtOGFmNTQwMTFkMWMwXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_.jpg",
+                "width": 400
+            },
+            "runningTimeInMinutes": 95,
+            "title": "Never Surrender: A Galaxy Quest Documentary",
+            "titleType": "movie",
+            "year": 2019,
+            "principals": [
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0000741/",
+                    "legacyNameText": "Allen, Tim (I)",
+                    "name": "Tim Allen",
+                    "billing": 1,
+                    "category": "self",
+                    "characters": [
+                        "Self"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Self"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0075528/",
+                    "legacyNameText": "Berlanti, Greg",
+                    "name": "Greg Berlanti",
+                    "billing": 2,
+                    "category": "self",
+                    "characters": [
+                        "Self - Creator, The Flash, Arrow"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Self - Creator, The Flash, Arrow"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0134578/",
+                    "legacyNameText": "Cantillon, Elizabeth",
+                    "name": "Elizabeth Cantillon",
+                    "billing": 3,
+                    "category": "self",
+                    "characters": [
+                        "Self - Executive Producer"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Self - Executive Producer"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "/title/tt0080771/",
+            "image": {
+                "height": 1170,
+                "id": "/title/tt0080771/images/rm3761403648",
+                "url": "https://m.media-amazon.com/images/M/MV5BOWZlYTFhMmYtNzRlNy00NDk3LThkNjEtNzAwNWJkYWJmODcyXkEyXkFqcGdeQXVyMjcxNjI4NTk@._V1_.jpg",
+                "width": 780
+            },
+            "runningTimeInMinutes": 95,
+            "title": "Galaxina",
+            "titleType": "movie",
+            "year": 1980,
+            "principals": [
+                {
+                    "id": "/name/nm0532685/",
+                    "legacyNameText": "Macht, Stephen",
+                    "name": "Stephen Macht",
+                    "billing": 1,
+                    "category": "actor",
+                    "characters": [
+                        "Sgt. Thor"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Sgt. Thor"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0775213/",
+                    "legacyNameText": "Schreiber, Avery",
+                    "name": "Avery Schreiber",
+                    "billing": 2,
+                    "category": "actor",
+                    "characters": [
+                        "Capt. Cornelius Butt"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Capt. Cornelius Butt"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0385989/",
+                    "legacyNameText": "Hinton, J.D.",
+                    "name": "J.D. Hinton",
+                    "as": "James David Hinton",
+                    "billing": 3,
+                    "category": "actor",
+                    "characters": [
+                        "Buzz"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Buzz"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "/title/tt2015381/",
+            "image": {
+                "height": 2048,
+                "id": "/title/tt2015381/images/rm1108790784",
+                "url": "https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_.jpg",
+                "width": 1382
+            },
+            "runningTimeInMinutes": 121,
+            "title": "Guardians of the Galaxy",
+            "titleType": "movie",
+            "year": 2014,
+            "principals": [
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0695435/",
+                    "legacyNameText": "Pratt, Chris (I)",
+                    "name": "Chris Pratt",
+                    "billing": 1,
+                    "category": "actor",
+                    "characters": [
+                        "Peter Quill"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Peter Quill",
+                            "characterId": "/character/ch0373829/"
+                        }
+                    ]
+                },
+                {
+                    "id": "/name/nm0004874/",
+                    "legacyNameText": "Diesel, Vin",
+                    "name": "Vin Diesel",
+                    "attr": [
+                        "voice"
+                    ],
+                    "billing": 4,
+                    "category": "actor",
+                    "characters": [
+                        "Groot"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Groot",
+                            "characterId": "/character/ch0361372/"
+                        }
+                    ]
+                },
+                {
+                    "disambiguation": "I",
+                    "id": "/name/nm0177896/",
+                    "legacyNameText": "Cooper, Bradley (I)",
+                    "name": "Bradley Cooper",
+                    "attr": [
+                        "voice"
+                    ],
+                    "billing": 5,
+                    "category": "actor",
+                    "characters": [
+                        "Rocket"
+                    ],
+                    "roles": [
+                        {
+                            "character": "Rocket",
+                            "characterId": "/character/ch0258335/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "disambiguation": "II",
+            "id": "/name/nm11492255/",
+            "legacyNameText": "Galaxy (II)",
+            "name": "Galaxy"
+        },
+        {
+            "id": "/name/nm11379124/",
+            "legacyNameText": "Galaxi",
+            "name": "Galaxi"
+        },
+        {
+            "disambiguation": "III",
+            "id": "/name/nm7564129/",
+            "legacyNameText": "Galaxy (III)",
+            "name": "Galaxy",
+            "knownFor": [
+                {
+                    "crew": [
+                        {
+                            "category": "producer",
+                            "job": "producer"
+                        }
+                    ],
+                    "summary": {
+                        "category": "producer",
+                        "displayYear": "2017"
+                    },
+                    "id": "/title/tt4997204/",
+                    "title": "Hason Raja",
+                    "titleType": "movie",
+                    "year": 2017
+                }
+            ]
+        },
+        {
+            "id": "/name/nm4526894/",
+            "image": {
+                "height": 5814,
+                "id": "/name/nm4526894/images/rm2844823809",
+                "url": "https://m.media-amazon.com/images/M/MV5BMmE0NTFiYmYtMjFhMC00Y2EyLWFjYzMtYzZkMDRlZTllMDM0XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+                "width": 5814
+            },
+            "legacyNameText": "Galaxy, Jackson",
+            "name": "Jackson Galaxy",
+            "knownFor": [
+                {
+                    "cast": [
+                        {
+                            "category": "self",
+                            "characters": [
+                                "Self"
+                            ],
+                            "endYear": 2018,
+                            "episodeCount": 97,
+                            "roles": [
+                                {
+                                    "character": "Self"
+                                }
+                            ],
+                            "startYear": 2011
+                        }
+                    ],
+                    "summary": {
+                        "category": "self",
+                        "characters": [
+                            "Self"
+                        ],
+                        "displayYear": "2011-2018"
+                    },
+                    "id": "/title/tt1933073/",
+                    "title": "My Cat from Hell",
+                    "titleType": "tvSeries",
+                    "year": 2011
+                },
+                {
+                    "cast": [
+                        {
+                            "category": "self",
+                            "characters": [
+                                "Self - Host"
+                            ],
+                            "endYear": 2017,
+                            "episodeCount": 7,
+                            "roles": [
+                                {
+                                    "character": "Self - Host"
+                                }
+                            ],
+                            "startYear": 2017
+                        }
+                    ],
+                    "crew": [
+                        {
+                            "category": "producer",
+                            "job": "executive producer"
+                        }
+                    ],
+                    "summary": {
+                        "category": "producer",
+                        "displayYear": "2017"
+                    },
+                    "id": "/title/tt7701832/",
+                    "title": "Cat Vs. Dog",
+                    "titleType": "tvSeries",
+                    "year": 2017
+                }
+            ]
+        },
+        {
+            "id": "/name/nm7809352/",
+            "legacyNameText": "Galaxy, Joe",
+            "name": "Joe Galaxy"
+        },
+        {
+            "id": "/name/nm9445569/",
+            "legacyNameText": "Ge, Galaxy",
+            "name": "Galaxy Ge",
+            "knownFor": [
+                {
+                    "crew": [
+                        {
+                            "category": "camera_department",
+                            "job": "still photographer"
+                        }
+                    ],
+                    "summary": {
+                        "category": "camera_department",
+                        "displayYear": "2017"
+                    },
+                    "id": "/title/tt7675044/",
+                    "title": "PurpleOne Productions One Long Take Studio Tour",
+                    "titleType": "short",
+                    "year": 2017
+                }
+            ]
+        },
+        {
+            "id": "/name/nm9575106/",
+            "legacyNameText": "Ktv, Galaxy",
+            "name": "Galaxy Ktv"
+        }
+    ],
+    "types": [
+        "title",
+        "name"
+    ]
+}
