@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_detail/widgets/director_text.dart';
 import 'package:movie_app/screens/movie_detail/widgets/introduction.dart';
+import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
 import 'package:movie_app/widgets/badge_container.dart';
 import 'package:movie_app/widgets/movie_title.dart';
 import 'package:movie_app/screens/movie_list/widgets/rating_container.dart';
@@ -8,10 +9,10 @@ import 'package:movie_app/screens/movie_list/widgets/rating_container.dart';
 import 'Widgets/actor_container.dart';
 
 class MovieDetail extends StatefulWidget {
-  final int index;
+  final String imdbId;
 
   const MovieDetail({
-    this.index,
+    this.imdbId,
     Key key,
   }) : super(key: key);
 
@@ -20,10 +21,19 @@ class MovieDetail extends StatefulWidget {
 }
 
 class _MovieDetailState extends State<MovieDetail> {
+  Movie _movie;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _movie = Movie();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: widget.index,
+      tag: widget.imdbId,
       child: Material(
         child: Stack(
           alignment: Alignment.center,
@@ -31,7 +41,7 @@ class _MovieDetailState extends State<MovieDetail> {
             Image(
               width: double.infinity,
               height: double.infinity,
-              image: NetworkImage("https://picsum.photos/200/300"),
+              image: NetworkImage(_movie.image.url),
               fit: BoxFit.contain,
             ),
             NotificationListener<OverscrollIndicatorNotification>(

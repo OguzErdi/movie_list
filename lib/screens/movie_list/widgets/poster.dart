@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Poster extends StatelessWidget {
-  final int index;
+  final String url;
 
   const Poster({
-    this.index,
+    this.url,
     Key key,
   }) : super(key: key);
 
@@ -19,6 +19,7 @@ class Poster extends StatelessWidget {
           Radius.circular(25),
         ),
       ),
+      child: url != null ? Image.network(url) : Text("No image"),
     );
   }
 }

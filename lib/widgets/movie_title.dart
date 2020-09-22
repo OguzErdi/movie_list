@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MovieTitle extends StatelessWidget {
+  final String title;
+
   const MovieTitle({
     Key key,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -12,7 +15,7 @@ class MovieTitle extends StatelessWidget {
         top: 20,
       ),
       child: Text(
-        "Joker",
+        title != null ? title : "No title",
         style: TextStyle(
           decoration: TextDecoration.none,
           fontSize: 20,

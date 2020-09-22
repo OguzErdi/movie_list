@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_detail/movie_detail.dart';
+import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
 
 import '../../../widgets/badge_container.dart';
 import '../../../widgets/icon_more.dart';
@@ -8,10 +9,10 @@ import 'poster.dart';
 import 'rating_container.dart';
 
 class MovieSummary extends StatelessWidget {
-  final int index;
+  final Movie movie;
 
   const MovieSummary({
-    this.index,
+    this.movie,
     Key key,
   }) : super(key: key);
 
@@ -22,12 +23,12 @@ class MovieSummary extends StatelessWidget {
         // Note: Sensitivity is integer used when you don't want to mess up vertical drag
         if (dragUpdateDetails.delta.dy < -5) {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => MovieDetail(index: index)));
+              builder: (context) => MovieDetail(imdbId: movie.id)));
         }
         print(dragUpdateDetails.delta.dy);
       },
       child: Hero(
-        tag: index,
+        tag: movie.id,
         child: Material(
           type: MaterialType.transparency,
           child: Container(
@@ -44,8 +45,8 @@ class MovieSummary extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Poster(index: index),
-                  MovieTitle(),
+                  Poster(url: movie.image?.url),
+                  MovieTitle(title: movie.title),
                   BadgeContainer(),
                   RatingContainer(),
                   IconMore(),
