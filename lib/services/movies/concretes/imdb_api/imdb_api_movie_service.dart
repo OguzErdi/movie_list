@@ -5,9 +5,11 @@ import 'package:http/http.dart' as http;
 import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
 
 class ImdbApiMovieService extends MovieService {
+  String rootUrl = 'https://imdb8.p.rapidapi.com';
+
   @override
   Future getMovie(String imdbId) async {
-    var url = "https://imdb8.p.rapidapi.com/title/find";
+    var url = "$rootUrl/title/find";
 
     var responseJson = await generateHttpRequest(url);
 
@@ -18,7 +20,7 @@ class ImdbApiMovieService extends MovieService {
 
   @override
   Future<List<Movie>> searchMovie(String title) async {
-    var url = "https://imdb8.p.rapidapi.com/title/find?q=$title";
+    var url = "$rootUrl/title/find?q=$title";
 
     var responseJson = await generateHttpRequest(url);
 
@@ -32,7 +34,28 @@ class ImdbApiMovieService extends MovieService {
       }
     });
 
+    response.results = response.results.reversed.toList();
+
+    response.results = response.results
+        .where((x) =>
+            (x.image?.url?.isNotEmpty ?? false) &&
+            (x.titleType == ResultTitleType.MOVIE))
+        .toList();
+
     return response.results;
+  }
+
+  @override
+  Future<List<MovieImage>>  getImages(String imdbId) async {
+    var url = "$rootUrl/title/get-images?tconst=$imdbId";
+
+    var responseJson = await generateHttpRequest(url);
+
+    var list = jsonDecode(responseJson) as Map;
+    var imagesRaw = list['images'];
+    var imagesList = (jsonDecode(imagesRaw) as List).map((e) => MovieImage.fromRawJson(e)).toList();
+
+    return imagesList;
   }
 
   @override

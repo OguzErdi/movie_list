@@ -13,13 +13,15 @@ class Poster extends StatelessWidget {
     return Container(
       width: 200,
       height: 250,
-      decoration: BoxDecoration(
-        color: Colors.red[400],
-        borderRadius: BorderRadius.all(
-          Radius.circular(25),
-        ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: url != null
+            ? Image.network(
+                url,
+                fit: BoxFit.cover,
+              )
+            : Text("No image"),
       ),
-      child: url != null ? Image.network(url) : Text("No image"),
     );
   }
 }

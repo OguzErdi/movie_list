@@ -16,6 +16,7 @@ class MovieTitle extends StatelessWidget {
       ),
       child: Text(
         title != null ? title : "No title",
+        textAlign: TextAlign.center,
         style: TextStyle(
           decoration: TextDecoration.none,
           fontSize: 20,

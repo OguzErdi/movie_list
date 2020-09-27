@@ -69,8 +69,9 @@ class _MovieListState extends State<MovieList> {
                   physics: NeverScrollableScrollPhysics(),
                   controller: _backgroundController,
                   itemBuilder: (context, index) {
-                    return Container(
-                      color: index % 2 == 0 ? Colors.teal : Colors.amber,
+                    return Image.network(
+                      _movies[index].image.url,
+                      fit: BoxFit.cover,
                     );
                   }),
               Align(

@@ -4,6 +4,7 @@ abstract class MovieService {
 
   Future<List<Movie>> searchMovie(String title);
   Future getMovie(String imdbId);
+  Future getImages(String imdbId);
 
   generateHttpRequest(String url);
 }
