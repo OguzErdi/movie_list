@@ -125,7 +125,7 @@ class _MovieListState extends State<MovieList> {
               ),
               Container(
                 alignment: Alignment.bottomCenter,
-                child: BuyTicketButton(),
+                child: MovieButton(),
               ),
             ],
           );

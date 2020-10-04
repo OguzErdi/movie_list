@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BuyTicketButton extends StatelessWidget {
+class MovieButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -52,7 +52,7 @@ class MovieSummary extends StatelessWidget {
                   Year(year: movie.year.toString()),
                   // BadgeContainer(),
                   // RatingContainer(),
-                  IconMore(),
+                  // IconMore(),
                 ],
               ),
             ),

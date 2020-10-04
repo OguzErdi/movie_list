@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Badge extends StatelessWidget {
+  final String text;
+
   const Badge({
+    this.text,
     Key key,
   }) : super(key: key);
 
@@ -13,7 +16,6 @@ class Badge extends StatelessWidget {
         vertical: 4,
         horizontal: 10,
       ),
-      alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.grey[400],
@@ -21,10 +23,10 @@ class Badge extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(25)),
       ),
       child: Text(
-        "Action",
+        text,
         style: TextStyle(
           decoration: TextDecoration.none,
-          fontSize: 9,
+          fontSize: 11,
           color: Colors.grey[600],
         ),
       ),
