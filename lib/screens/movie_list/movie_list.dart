@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/services/locator/service_locator.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
-import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
 import 'package:movie_app/widgets/buy_ticket_button.dart';
 import 'package:movie_app/screens/movie_list/widgets/movie_summary.dart';
 
@@ -56,7 +56,7 @@ class _MovieListState extends State<MovieList> {
         future: _movieService.searchMovie("galaxy"),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Text("No Data");
+            return Center(child: Text("No Data"));
           }
 
           _movies = snapshot.data;
@@ -70,7 +70,7 @@ class _MovieListState extends State<MovieList> {
                   controller: _backgroundController,
                   itemBuilder: (context, index) {
                     return Image.network(
-                      _movies[index].image.url,
+                      _movies[index].posterUrl,
                       fit: BoxFit.cover,
                     );
                   }),

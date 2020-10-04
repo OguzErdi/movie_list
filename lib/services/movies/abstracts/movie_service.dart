@@ -1,10 +1,11 @@
-import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
 
-abstract class MovieService {
+import 'package:movie_app/models/movie.dart';
+import 'package:movie_app/utils/rest_api_service.dart';
 
+abstract class MovieService extends RestApiService {
+  
   Future<List<Movie>> searchMovie(String title);
-  Future getMovie(String imdbId);
+  Future<Movie> getMovie(String imdbId);
   Future getImages(String imdbId);
 
-  generateHttpRequest(String url);
 }

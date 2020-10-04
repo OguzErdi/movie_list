@@ -1,28 +1,21 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
+import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:http/http.dart' as http;
-import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
+import 'package:movie_app/services/movies/concretes/imdb api/responses/search_response.dart';
 
 class ImdbApiMovieService extends MovieService {
-  String rootUrl = 'https://imdb8.p.rapidapi.com';
-
-  @override
-  Future getMovie(String imdbId) async {
-    var url = "$rootUrl/title/find";
-
-    var responseJson = await generateHttpRequest(url);
-
-    var response = SearchResponse.fromRawJson(responseJson);
-
-    return response.results;
+  
+  ImdbApiMovieService(){
+    this.rootUrl = 'https://imdb8.p.rapidapi.com';
   }
-
+  
   @override
   Future<List<Movie>> searchMovie(String title) async {
-    var url = "$rootUrl/title/find?q=$title";
+    var url = "${this.rootUrl}/title/find?q=$title";
 
-    var responseJson = await generateHttpRequest(url);
+    var responseJson = await makeRequest(url);
 
     var response = SearchResponse.fromRawJson(responseJson);
 
@@ -42,14 +35,15 @@ class ImdbApiMovieService extends MovieService {
             (x.titleType == ResultTitleType.MOVIE))
         .toList();
 
-    return response.results;
+    // return response.results;
+    return List<Movie>();
   }
 
   @override
   Future<List<MovieImage>>  getImages(String imdbId) async {
     var url = "$rootUrl/title/get-images?tconst=$imdbId";
 
-    var responseJson = await generateHttpRequest(url);
+    var responseJson = await makeRequest(url);
 
     var list = jsonDecode(responseJson) as Map;
     var imagesRaw = list['images'];
@@ -59,7 +53,7 @@ class ImdbApiMovieService extends MovieService {
   }
 
   @override
-  Future generateHttpRequest(String url) async {
+  Future<http.Response> sendGetRequest(String url) async {
     var response = await http.get(
       url,
       headers: {
@@ -68,12 +62,12 @@ class ImdbApiMovieService extends MovieService {
         "useQueryString": "true",
       },
     );
+    return response;
+  }
 
-    if (response.statusCode == 200) {
-      return response.body;
-    } else {
-      throw Exception(
-          "Not connetct to ImdbApiMovieService. Error: ${response.statusCode}");
-    }
+  @override
+  Future<Movie> getMovie(String imdbId) {
+    // TODO: implement getMovie
+    throw UnimplementedError();
   }
 }

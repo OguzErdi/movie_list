@@ -16,7 +16,7 @@ class SearchResponse {
     Meta meta;
     String type;
     String query;
-    List<Movie> results;
+    List<ImdbMovie> results;
     List<String> types;
 
     factory SearchResponse.fromRawJson(String str) => SearchResponse.fromJson(json.decode(str));
@@ -27,7 +27,7 @@ class SearchResponse {
         meta: json["@meta"] == null ? null : Meta.fromJson(json["@meta"]),
         type: json["@type"] == null ? null : json["@type"],
         query: json["query"] == null ? null : json["query"],
-        results: json["results"] == null ? null : List<Movie>.from(json["results"].map((x) => Movie.fromJson(x))),
+        results: json["results"] == null ? null : List<ImdbMovie>.from(json["results"].map((x) => ImdbMovie.fromJson(x))),
         types: json["types"] == null ? null : List<String>.from(json["types"].map((x) => x)),
     );
 
@@ -68,8 +68,8 @@ class Meta {
     };
 }
 
-class Movie {
-    Movie({
+class ImdbMovie {
+    ImdbMovie({
         this.id,
         this.image,
         this.runningTimeInMinutes,
@@ -105,11 +105,11 @@ class Movie {
     int seriesEndYear;
     int seriesStartYear;
 
-    factory Movie.fromRawJson(String str) => Movie.fromJson(json.decode(str));
+    factory ImdbMovie.fromRawJson(String str) => ImdbMovie.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
 
-    factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+    factory ImdbMovie.fromJson(Map<String, dynamic> json) => ImdbMovie(
         id: json["id"] == null ? null : json["id"],
         image: json["image"] == null ? null : MovieImage.fromJson(json["image"]),
         runningTimeInMinutes: json["runningTimeInMinutes"] == null ? null : json["runningTimeInMinutes"],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/screens/movie_detail/widgets/director_text.dart';
 import 'package:movie_app/screens/movie_detail/widgets/introduction.dart';
-import 'package:movie_app/services/movies/concretes/imdb_api/models/search_response.dart';
 import 'package:movie_app/widgets/badge_container.dart';
 import 'package:movie_app/widgets/movie_title.dart';
 import 'package:movie_app/screens/movie_list/widgets/rating_container.dart';
@@ -41,7 +41,7 @@ class _MovieDetailState extends State<MovieDetail> {
             Image(
               width: double.infinity,
               height: double.infinity,
-              image: NetworkImage(_movie.image.url),
+              image: NetworkImage(_movie.posterUrl),
               fit: BoxFit.contain,
             ),
             NotificationListener<OverscrollIndicatorNotification>(
