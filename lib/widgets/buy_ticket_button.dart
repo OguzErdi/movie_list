@@ -13,7 +13,7 @@ class BuyTicketButton extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           onPressed: () {},
           child: Text(
-            "BUY TICKET",
+            "ADD TO LIST",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

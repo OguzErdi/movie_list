@@ -22,9 +22,6 @@ class _MovieListState extends State<MovieList> {
   double _currentOffset = 0;
   MovieService _movieService;
   List<Movie> _movies;
-  double _sigmaX = 0.0; // from 0-10
-  double _sigmaY = 0.0; // from 0-10
-  double _opacity = 0.1; // from 0-1.0
 
   @override
   void initState() {
@@ -84,7 +81,7 @@ class _MovieListState extends State<MovieList> {
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                     child: Container(
-                      color: Colors.black.withOpacity(_opacity),
+                      color: Colors.black.withOpacity(0.1),
                     ),
                   ),
                 ),
@@ -97,7 +94,7 @@ class _MovieListState extends State<MovieList> {
                     return;
                   },
                   child: SizedBox(
-                    height: 600,
+                    height: 550,
                     child: PageView.builder(
                       onPageChanged: (pos) {
                         setState(() {

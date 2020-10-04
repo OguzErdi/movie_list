@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/screens/movie_detail/movie_detail.dart';
+import 'package:movie_app/widgets/year.dart';
 
 import '../../../widgets/badge_container.dart';
 import '../../../widgets/icon_more.dart';
@@ -23,12 +25,12 @@ class MovieSummary extends StatelessWidget {
         // Note: Sensitivity is integer used when you don't want to mess up vertical drag
         if (dragUpdateDetails.delta.dy < -5) {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => MovieDetail(imdbId: movie.title)));
+              builder: (context) => MovieDetail(imdbId: movie.imdbId)));
         }
         print(dragUpdateDetails.delta.dy);
       },
       child: Hero(
-        tag: movie.title,
+        tag: movie.imdbId,
         child: Material(
           type: MaterialType.transparency,
           child: Container(
@@ -47,8 +49,9 @@ class MovieSummary extends StatelessWidget {
                 children: [
                   Poster(url: movie.posterUrl),
                   MovieTitle(title: movie.title),
-                  BadgeContainer(),
-                  RatingContainer(),
+                  Year(year: movie.year.toString()),
+                  // BadgeContainer(),
+                  // RatingContainer(),
                   IconMore(),
                 ],
               ),

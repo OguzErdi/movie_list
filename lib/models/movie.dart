@@ -1,17 +1,27 @@
-import 'dart:convert';
 
 class Movie {
   String imdbId;
   String posterUrl;
   String title;
   int year;
-  double imdbRating;
+  String imdbRating;
+  String actors;
+  String director;
+  String genre;
+  String plot;
+  String awards;
+
   Movie({
     this.imdbId,
     this.posterUrl,
     this.title,
     this.year,
     this.imdbRating,
+    this.actors,
+    this.director,
+    this.genre,
+    this.plot,
+    this.awards,
   });
 
   Movie copyWith({
@@ -19,7 +29,12 @@ class Movie {
     String posterUrl,
     String title,
     int year,
-    double imdbRating,
+    String imdbRating,
+    String actors,
+    String director,
+    String genre,
+    String plot,
+    String awards,
   }) {
     return Movie(
       imdbId: imdbId ?? this.imdbId,
@@ -27,58 +42,16 @@ class Movie {
       title: title ?? this.title,
       year: year ?? this.year,
       imdbRating: imdbRating ?? this.imdbRating,
+      actors: actors ?? this.actors,
+      director: director ?? this.director,
+      genre: genre ?? this.genre,
+      plot: plot ?? this.plot,
+      awards: awards ?? this.awards,
     );
   }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'imdbId': imdbId,
-      'posterUrl': posterUrl,
-      'title': title,
-      'year': year,
-      'imdbRating': imdbRating,
-    };
-  }
-
-  factory Movie.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
-    return Movie(
-      imdbId: map['imdbId'],
-      posterUrl: map['posterUrl'],
-      title: map['title'],
-      year: map['year'],
-      imdbRating: map['imdbRating'],
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory Movie.fromJson(String source) => Movie.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Movie(imdbId: $imdbId, posterUrl: $posterUrl, title: $title, year: $year, imdbRating: $imdbRating)';
-  }
-
-  @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
-  
-    return o is Movie &&
-      o.imdbId == imdbId &&
-      o.posterUrl == posterUrl &&
-      o.title == title &&
-      o.year == year &&
-      o.imdbRating == imdbRating;
-  }
-
-  @override
-  int get hashCode {
-    return imdbId.hashCode ^
-      posterUrl.hashCode ^
-      title.hashCode ^
-      year.hashCode ^
-      imdbRating.hashCode;
+    return 'Movie(imdbId: $imdbId, posterUrl: $posterUrl, title: $title, year: $year, imdbRating: $imdbRating, actors: $actors, director: $director, genre: $genre, plot: $plot, awards: $awards)';
   }
 }
