@@ -29,7 +29,7 @@ class OmdbApiMovieService extends MovieService {
   }
 
   @override
-  Future<Movie> getMovie(String imdbId) {
+  Future<Movie> getMovieByImdbId(String imdbId) {
     // TODO: implement getMovie
     throw UnimplementedError();
   }
@@ -37,6 +37,12 @@ class OmdbApiMovieService extends MovieService {
     @override
   Future getImages(String imdbId) {
     // TODO: implement getImages
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Movie> getMovieByTitle(String imdbId) {
+    // TODO: implement getMovieByTitle
     throw UnimplementedError();
   }
 }

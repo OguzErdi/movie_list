@@ -11,8 +11,8 @@ class Poster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 250,
+      width: 220,
+      height: 350,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30.0),
         child: url != null

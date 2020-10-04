@@ -10,7 +10,7 @@ class ImdbApiMovieService extends MovieService {
   ImdbApiMovieService(){
     this.rootUrl = 'https://imdb8.p.rapidapi.com';
   }
-  
+
   @override
   Future<List<Movie>> searchMovie(String title) async {
     var url = "${this.rootUrl}/title/find?q=$title";
@@ -66,8 +66,14 @@ class ImdbApiMovieService extends MovieService {
   }
 
   @override
-  Future<Movie> getMovie(String imdbId) {
+  Future<Movie> getMovieByImdbId(String imdbId) {
     // TODO: implement getMovie
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Movie> getMovieByTitle(String imdbId) {
+    // TODO: implement getMovieByTitle
     throw UnimplementedError();
   }
 }

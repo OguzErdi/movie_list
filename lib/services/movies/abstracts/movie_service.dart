@@ -5,7 +5,8 @@ import 'package:movie_app/utils/rest_api_service.dart';
 abstract class MovieService extends RestApiService {
   
   Future<List<Movie>> searchMovie(String title);
-  Future<Movie> getMovie(String imdbId);
+  Future<Movie> getMovieByImdbId(String imdbId);
+  Future<Movie> getMovieByTitle(String imdbId);
   Future getImages(String imdbId);
 
 }
