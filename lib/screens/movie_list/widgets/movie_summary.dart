@@ -44,6 +44,7 @@ class MovieSummary extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Poster(url: movie.posterUrl),
+                  SizedBox(height: 20),
                   MovieTitle(title: movie.title),
                   Year(year: movie.year.toString()),
                   // BadgeContainer(),

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_detail/widgets/actor.dart';
 
-
 class ActorContianer extends StatelessWidget {
+  final List<String> actors;
+
+  const ActorContianer({
+    this.actors,
+    Key key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,9 +29,9 @@ class ActorContianer extends StatelessWidget {
               return SizedBox(width: 20);
             },
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: actors.length,
             itemBuilder: (context, index) {
-              return Actor();
+              return Actor(name: actors[index]);
             },
           ),
         )

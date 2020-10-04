@@ -10,19 +10,14 @@ class MovieTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        top: 20,
-      ),
-      child: Text(
-        title != null ? title : "No title",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          decoration: TextDecoration.none,
-          fontSize: 20,
-          fontWeight: FontWeight.w900,
-          color: Colors.grey[850],
-        ),
+    return Text(
+      title != null ? title : "No title",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        decoration: TextDecoration.none,
+        fontSize: 20,
+        fontWeight: FontWeight.w900,
+        color: Colors.grey[850],
       ),
     );
   }

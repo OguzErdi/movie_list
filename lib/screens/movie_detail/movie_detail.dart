@@ -50,11 +50,14 @@ class _MovieDetailState extends State<MovieDetail> {
             return Stack(
               alignment: Alignment.center,
               children: [
-                Image(
-                  width: double.infinity,
-                  height: double.infinity,
-                  image: NetworkImage(_movie.posterUrl),
-                  fit: BoxFit.contain,
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Image(
+                    width: double.infinity,
+                    height: double.infinity,
+                    image: NetworkImage(_movie.posterUrl),
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 NotificationListener<OverscrollIndicatorNotification>(
                   onNotification: (OverscrollIndicatorNotification overscroll) {
@@ -77,21 +80,26 @@ class _MovieDetailState extends State<MovieDetail> {
                             controller: scrollController,
                             child: Column(
                               children: [
+                                SizedBox(height: 30),
                                 MovieTitle(
                                   title: _movie.title,
                                 ),
+                                SizedBox(height: 10),
                                 BadgeContainer(
                                   badgeList: _movie.genre.split(','),
                                 ),
+                                SizedBox(height: 10),
                                 ImdbRating(
                                   score: double.parse(_movie.imdbRating),
                                 ),
+                                SizedBox(height: 10),
                                 DirectorText(),
+                                SizedBox(height: 20),
                                 RatingContainer(
                                   ratings: _movie.ratings,
                                 ),
                                 SizedBox(height: 30),
-                                ActorContianer(),
+                                ActorContianer(actors: _movie.actors.split(',')),
                                 Introduction(),
                               ],
                             ),

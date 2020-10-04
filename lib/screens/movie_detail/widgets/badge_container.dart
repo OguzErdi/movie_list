@@ -11,18 +11,12 @@ class BadgeContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: EdgeInsets.only(
-        top: 10,
-      ),
-      child: Wrap(
-        children: badgeList
-            .map((e) => Badge(
-                  text: e,
-                ))
-            .toList(),
-      ),
+    return Wrap(
+      children: badgeList
+          .map((e) => Badge(
+                text: e,
+              ))
+          .toList(),
     );
   }
 }
