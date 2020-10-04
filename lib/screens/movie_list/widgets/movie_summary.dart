@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/screens/movie_detail/movie_detail.dart';
-import 'package:movie_app/widgets/year.dart';
-
-import '../../../widgets/badge_container.dart';
-import '../../../widgets/icon_more.dart';
-import '../../../widgets/movie_title.dart';
-import 'poster.dart';
-import 'rating_container.dart';
+import 'package:movie_app/widgets/movie_title.dart';
+import 'package:movie_app/widgets/poster.dart';
+import 'package:movie_app/screens/movie_list/widgets/year.dart';
 
 class MovieSummary extends StatelessWidget {
   final Movie movie;

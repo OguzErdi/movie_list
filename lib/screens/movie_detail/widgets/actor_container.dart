@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/movie_detail/widgets/actor.dart';
 
+
 class ActorContianer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

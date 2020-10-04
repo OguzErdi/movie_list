@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/widgets/badge.dart';
+import 'package:movie_app/screens/movie_detail/widgets/badge.dart';
 
 class BadgeContainer extends StatelessWidget {
   final List<String> badgeList;
@@ -13,7 +13,9 @@ class BadgeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(top: 10,),
+      padding: EdgeInsets.only(
+        top: 10,
+      ),
       child: Wrap(
         children: badgeList
             .map((e) => Badge(

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/services/movies/concretes/omdb%20api/responses/movie_response.dart';
 
-import 'rating_score.dart';
-import 'rating_starts.dart';
+import '../screens/movie_list/widgets/../../../widgets/rating_score.dart';
 
 class RatingContainer extends StatelessWidget {
+  final List<Rating> ratings;
+  
   const RatingContainer({
+    this.ratings,
     Key key,
   }) : super(key: key);
 
@@ -12,14 +15,11 @@ class RatingContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: 10,
+        top: 20,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          RatingScore(),
-          RatingStars(),
-        ],
+        children: ratings.map((e) => RatingScore(rating: e)).toList(),
       ),
     );
   }

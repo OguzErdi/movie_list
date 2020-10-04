@@ -30,7 +30,7 @@ class OmdbApiMovieService extends MovieService {
     movies.sort((a, b) {
       return b.year.compareTo(a.year);
     });
-    
+
     return movies;
   }
 
@@ -47,6 +47,7 @@ class OmdbApiMovieService extends MovieService {
       imdbId: response.imdbId,
       year: int.parse(response.year),
       imdbRating: response.imdbRating,
+      ratings: response.ratings,
       plot: response.plot,
       actors: response.actors,
       director: response.director,

@@ -1,3 +1,4 @@
+import 'package:movie_app/services/movies/concretes/omdb%20api/responses/movie_response.dart';
 
 class Movie {
   String imdbId;
@@ -10,7 +11,7 @@ class Movie {
   String genre;
   String plot;
   String awards;
-
+  List<Rating> ratings;
   Movie({
     this.imdbId,
     this.posterUrl,
@@ -22,36 +23,12 @@ class Movie {
     this.genre,
     this.plot,
     this.awards,
+    this.ratings,
   });
 
-  Movie copyWith({
-    String imdbId,
-    String posterUrl,
-    String title,
-    int year,
-    String imdbRating,
-    String actors,
-    String director,
-    String genre,
-    String plot,
-    String awards,
-  }) {
-    return Movie(
-      imdbId: imdbId ?? this.imdbId,
-      posterUrl: posterUrl ?? this.posterUrl,
-      title: title ?? this.title,
-      year: year ?? this.year,
-      imdbRating: imdbRating ?? this.imdbRating,
-      actors: actors ?? this.actors,
-      director: director ?? this.director,
-      genre: genre ?? this.genre,
-      plot: plot ?? this.plot,
-      awards: awards ?? this.awards,
-    );
-  }
 
   @override
   String toString() {
-    return 'Movie(imdbId: $imdbId, posterUrl: $posterUrl, title: $title, year: $year, imdbRating: $imdbRating, actors: $actors, director: $director, genre: $genre, plot: $plot, awards: $awards)';
+    return 'Movie(imdbId: $imdbId, posterUrl: $posterUrl, title: $title, year: $year, imdbRating: $imdbRating, actors: $actors, director: $director, genre: $genre, plot: $plot, awards: $awards, raitrings: $ratings)';
   }
 }

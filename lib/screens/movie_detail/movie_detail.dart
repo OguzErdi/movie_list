@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/models/movie.dart';
+import 'package:movie_app/screens/movie_detail/widgets/actor_container.dart';
+import 'package:movie_app/screens/movie_detail/widgets/badge_container.dart';
 import 'package:movie_app/screens/movie_detail/widgets/director_text.dart';
+import 'package:movie_app/screens/movie_detail/widgets/imdb_rating.dart';
 import 'package:movie_app/screens/movie_detail/widgets/introduction.dart';
 import 'package:movie_app/services/locator/service_locator.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
-import 'package:movie_app/widgets/badge_container.dart';
 import 'package:movie_app/widgets/movie_title.dart';
-import 'package:movie_app/screens/movie_list/widgets/rating_container.dart';
-
-import 'Widgets/actor_container.dart';
+import 'package:movie_app/screens/movie_detail/widgets/rating_container.dart';
 
 class MovieDetail extends StatefulWidget {
   final String imdbId;
@@ -77,10 +77,19 @@ class _MovieDetailState extends State<MovieDetail> {
                             controller: scrollController,
                             child: Column(
                               children: [
-                                MovieTitle(title: _movie.title,),
-                                BadgeContainer(badgeList: _movie.genre.split(','),),
-                                RatingContainer(),
+                                MovieTitle(
+                                  title: _movie.title,
+                                ),
+                                BadgeContainer(
+                                  badgeList: _movie.genre.split(','),
+                                ),
+                                ImdbRating(
+                                  score: double.parse(_movie.imdbRating),
+                                ),
                                 DirectorText(),
+                                RatingContainer(
+                                  ratings: _movie.ratings,
+                                ),
                                 SizedBox(height: 30),
                                 ActorContianer(),
                                 Introduction(),
