@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:http/http.dart' as http;

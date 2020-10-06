@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:movie_app/services/movies/concretes/omdb%20api/responses/movie_response.dart';
 import 'package:movie_app/services/movies/concretes/omdb%20api/responses/search_movie_response.dart';
+import 'package:movie_app/utils/configs.dart';
 
 class OmdbApiMovieService extends MovieService {
   OmdbApiMovieService() {
-    this.rootUrl = "http://www.omdbapi.com/?apikey=4714e7";
+    Configs().getOmdbEndPoint().then((value) => this.rootUrl=value);
   }
 
   @override
