@@ -36,7 +36,7 @@ class OmdbApiMovieService extends MovieService {
 
   @override
   Future<Movie> getMovieByImdbId(String imdbId) async {
-    var url = this.rootUrl + "&type=movie" + "&i=$imdbId";
+    var url = this.rootUrl + "&type=movie" + "&i=$imdbId" + "&plot=full";
 
     var rawResponse = await makeRequest(url);
 

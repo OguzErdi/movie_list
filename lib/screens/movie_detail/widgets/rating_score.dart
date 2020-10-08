@@ -16,20 +16,20 @@ class RatingScore extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            rating.source,
-            style: TextStyle(
-              decoration: TextDecoration.none,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[600],
-            ),
-          ),
-          Text(
             rating.value,
             style: TextStyle(
               decoration: TextDecoration.none,
               fontSize: 14,
               fontWeight: FontWeight.w900,
+              color: Colors.grey[600],
+            ),
+          ),
+          Text(
+            rating.source,
+            style: TextStyle(
+              decoration: TextDecoration.none,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
               color: Colors.grey[600],
             ),
           ),

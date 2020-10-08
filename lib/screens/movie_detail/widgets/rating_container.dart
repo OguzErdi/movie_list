@@ -5,7 +5,7 @@ import '../screens/movie_list/widgets/../../../widgets/rating_score.dart';
 
 class RatingContainer extends StatelessWidget {
   final List<Rating> ratings;
-  
+
   const RatingContainer({
     this.ratings,
     Key key,
@@ -13,12 +13,25 @@ class RatingContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: ratings.map((e) => RatingScore(rating: e)).toList(),
+      children: ratings
+          .asMap()
+          .map(
+            (i, e) => MapEntry(
+              i,
+              i < ratings.length - 1
+                  ? Column(
+                      children: [
+                        RatingScore(rating: e),
+                        Divider(indent: 100, endIndent: 100)
+                      ],
+                    )
+                  : RatingScore(rating: e),
+            ),
+          )
+          .values
+          .toList(),
     );
   }
 }
-
-
-

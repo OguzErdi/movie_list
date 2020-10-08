@@ -88,19 +88,19 @@ class _MovieDetailState extends State<MovieDetail> {
                                 BadgeContainer(
                                   badgeList: _movie.genre.split(','),
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(height: 20),
                                 ImdbRating(
                                   score: double.parse(_movie.imdbRating),
                                 ),
                                 SizedBox(height: 10),
-                                DirectorText(),
+                                DirectorText(text: _movie.director),
                                 SizedBox(height: 20),
                                 RatingContainer(
                                   ratings: _movie.ratings,
                                 ),
                                 SizedBox(height: 30),
                                 ActorContianer(actors: _movie.actors.split(',')),
-                                Introduction(),
+                                Introduction(text: _movie.plot),
                               ],
                             ),
                           ),
