@@ -39,19 +39,6 @@ class ImdbApiMovieService extends MovieService {
   }
 
   @override
-  Future<List<MovieImage>>  getImages(String imdbId) async {
-    var url = "$rootUrl/title/get-images?tconst=$imdbId";
-
-    var responseJson = await makeRequest(url);
-
-    var list = jsonDecode(responseJson) as Map;
-    var imagesRaw = list['images'];
-    var imagesList = (jsonDecode(imagesRaw) as List).map((e) => MovieImage.fromRawJson(e)).toList();
-
-    return imagesList;
-  }
-
-  @override
   Future<Movie> getMovieByImdbId(String imdbId) {
     // doesn't implemented becouse of api limit :(.
     throw UnimplementedError();
