@@ -10,6 +10,7 @@ import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:movie_app/widgets/movie_title.dart';
 import 'package:movie_app/screens/movie_detail/widgets/rating_container.dart';
 import 'package:movie_app/widgets/panel_divider.dart';
+import 'package:movie_app/widgets/spin.dart';
 
 class MovieDetail extends StatefulWidget {
   final String imdbId;
@@ -43,7 +44,7 @@ class _MovieDetailState extends State<MovieDetail> {
           future: _movieService.getMovieByImdbId(widget.imdbId),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return Center(child: Text("No Data"));
+              return Spin();
             }
 
             _movie = snapshot.data;
