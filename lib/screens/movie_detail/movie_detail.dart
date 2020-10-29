@@ -9,6 +9,7 @@ import 'package:movie_app/services/locator/service_locator.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:movie_app/widgets/movie_title.dart';
 import 'package:movie_app/screens/movie_detail/widgets/rating_container.dart';
+import 'package:movie_app/widgets/panel_divider.dart';
 
 class MovieDetail extends StatefulWidget {
   final String imdbId;
@@ -76,11 +77,12 @@ class _MovieDetailState extends State<MovieDetail> {
                                   top: Radius.circular(30))),
                           //must be a scrollable widget. it can be Listview
                           child: SingleChildScrollView(
-                            physics: BouncingScrollPhysics(),
                             controller: scrollController,
                             child: Column(
                               children: [
-                                SizedBox(height: 30),
+                                SizedBox(height: 10),
+                                PanelDivider(),
+                                SizedBox(height: 20),
                                 MovieTitle(
                                   title: _movie.title,
                                 ),
@@ -99,7 +101,8 @@ class _MovieDetailState extends State<MovieDetail> {
                                   ratings: _movie.ratings,
                                 ),
                                 SizedBox(height: 30),
-                                ActorContianer(actors: _movie.actors.split(',')),
+                                ActorContianer(
+                                    actors: _movie.actors.split(',')),
                                 Introduction(text: _movie.plot),
                               ],
                             ),

@@ -2,7 +2,7 @@ import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:movie_app/services/movies/concretes/omdb%20api/responses/movie_response.dart';
 import 'package:movie_app/services/movies/concretes/omdb%20api/responses/search_movie_response.dart';
-import 'package:movie_app/utils/configs.dart';
+import 'package:movie_app/utils/configs/configs.dart';
 
 class OmdbApiMovieService extends MovieService {
   OmdbApiMovieService() {
@@ -55,16 +55,5 @@ class OmdbApiMovieService extends MovieService {
       posterUrl: response.poster,
       awards: response.awards,
     );
-  }
-
-  @override
-  Future<Movie> getMovieByTitle(String title) {
-    var url = this.rootUrl + "&type=movie" + "&i=$title";
-  }
-
-  @override
-  Future getImages(String imdbId) {
-    // TODO: implement getImages
-    throw UnimplementedError();
   }
 }

@@ -1,4 +1,4 @@
-import 'package:movie_app/utils/config_loader_service.dart';
+import 'package:movie_app/utils/configs/config_loader_service.dart';
 
 class Configs{
   static final Configs _singleton = Configs._internal();
