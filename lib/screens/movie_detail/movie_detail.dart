@@ -27,12 +27,15 @@ class MovieDetail extends StatefulWidget {
 class _MovieDetailState extends State<MovieDetail> {
   Movie _movie;
   MovieService _movieService;
+  Future<Movie> _moviesFuture;
 
   @override
   void initState() {
     super.initState();
 
     _movieService = locator<MovieService>();
+
+    _moviesFuture =  _movieService.getMovieByImdbId(widget.imdbId);
   }
 
   @override
@@ -41,81 +44,84 @@ class _MovieDetailState extends State<MovieDetail> {
       tag: widget.imdbId,
       child: Material(
         child: FutureBuilder(
-          future: _movieService.getMovieByImdbId(widget.imdbId),
+          future: _moviesFuture,
           builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return Spin();
+            if (snapshot.hasData) {
+              _movie = snapshot.data;
+              return getWidgets();
             }
-            _movie = snapshot.data;
-
-            return Stack(
-              alignment: Alignment.center,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Image(
-                    width: double.infinity,
-                    height: double.infinity,
-                    image: NetworkImage(_movie.posterUrl),
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                NotificationListener<OverscrollIndicatorNotification>(
-                  onNotification: (OverscrollIndicatorNotification overscroll) {
-                    overscroll.disallowGlow();
-                    return;
-                  },
-                  child: DraggableScrollableSheet(
-                      maxChildSize: 0.75,
-                      initialChildSize: 0.2,
-                      minChildSize: 0.1,
-                      builder: (context, scrollController) {
-                        return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.vertical(
-                                  top: Radius.circular(30))),
-                          //must be a scrollable widget. it can be Listview
-                          child: SingleChildScrollView(
-                            controller: scrollController,
-                            child: Column(
-                              children: [
-                                SizedBox(height: 10),
-                                PanelDivider(),
-                                SizedBox(height: 20),
-                                MovieTitle(
-                                  title: _movie.title,
-                                ),
-                                SizedBox(height: 10),
-                                BadgeContainer(
-                                  badgeList: _movie.genre.split(','),
-                                ),
-                                SizedBox(height: 20),
-                                ImdbRating(
-                                  score: double.parse(_movie.imdbRating),
-                                ),
-                                SizedBox(height: 10),
-                                DirectorText(text: _movie.director),
-                                SizedBox(height: 20),
-                                RatingContainer(
-                                  ratings: _movie.ratings,
-                                ),
-                                SizedBox(height: 30),
-                                ActorContianer(
-                                    actors: _movie.actors.split(',')),
-                                Introduction(text: _movie.plot),
-                              ],
-                            ),
-                          ),
-                        );
-                      }),
-                )
-              ],
-            );
+            return Spin();
           },
         ),
       ),
     );
+  }
+
+  Stack getWidgets() {
+    return Stack(
+            alignment: Alignment.center,
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Image(
+                  width: double.infinity,
+                  height: double.infinity,
+                  image: NetworkImage(_movie.posterUrl),
+                  fit: BoxFit.contain,
+                ),
+              ),
+              NotificationListener<OverscrollIndicatorNotification>(
+                onNotification: (OverscrollIndicatorNotification overscroll) {
+                  overscroll.disallowGlow();
+                  return;
+                },
+                child: DraggableScrollableSheet(
+                    maxChildSize: 0.75,
+                    initialChildSize: 0.2,
+                    minChildSize: 0.1,
+                    builder: (context, scrollController) {
+                      return Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(30))),
+                        //must be a scrollable widget. it can be Listview
+                        child: SingleChildScrollView(
+                          controller: scrollController,
+                          child: Column(
+                            children: [
+                              SizedBox(height: 10),
+                              PanelDivider(),
+                              SizedBox(height: 20),
+                              MovieTitle(
+                                title: _movie.title,
+                              ),
+                              SizedBox(height: 10),
+                              BadgeContainer(
+                                badgeList: _movie.genre.split(','),
+                              ),
+                              SizedBox(height: 20),
+                              ImdbRating(
+                                score: double.parse(_movie.imdbRating),
+                              ),
+                              SizedBox(height: 10),
+                              DirectorText(text: _movie.director),
+                              SizedBox(height: 20),
+                              RatingContainer(
+                                ratings: _movie.ratings,
+                              ),
+                              SizedBox(height: 30),
+                              ActorContianer(
+                                  actors: _movie.actors.split(',')),
+                              Introduction(text: _movie.plot),
+                            ],
+                          ),
+                        ),
+                      );
+                    }),
+              )
+            ],
+          );
   }
 }
