@@ -46,7 +46,6 @@ class _MovieDetailState extends State<MovieDetail> {
             if (!snapshot.hasData) {
               return Spin();
             }
-
             _movie = snapshot.data;
 
             return Stack(

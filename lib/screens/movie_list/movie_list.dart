@@ -6,6 +6,7 @@ import 'package:movie_app/services/locator/service_locator.dart';
 import 'package:movie_app/services/movies/abstracts/movie_service.dart';
 import 'package:movie_app/widgets/buy_ticket_button.dart';
 import 'package:movie_app/screens/movie_list/widgets/movie_summary.dart';
+import 'package:movie_app/widgets/spin.dart';
 
 class MovieList extends StatefulWidget {
   @override
@@ -58,7 +59,7 @@ class _MovieListState extends State<MovieList> {
         future: _movieService.searchMovie("galaxy"),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(child: Text("No Data"));
+            return Spin();
           }
 
           _movies = snapshot.data;

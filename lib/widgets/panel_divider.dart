@@ -13,9 +13,7 @@ class PanelDivider extends StatelessWidget {
       height: 8,
       decoration: BoxDecoration(
         color: Colors.grey[700],
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
+        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
