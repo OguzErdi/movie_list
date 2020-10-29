@@ -67,7 +67,8 @@ class _MovieDetailState extends State<MovieDetail> {
                   },
                   child: DraggableScrollableSheet(
                       maxChildSize: 0.75,
-                      minChildSize: 0.2,
+                      initialChildSize: 0.2,
+                      minChildSize: 0.1,
                       builder: (context, scrollController) {
                         return Container(
                           padding: EdgeInsets.symmetric(horizontal: 20),
