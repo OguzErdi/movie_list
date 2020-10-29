@@ -52,6 +52,12 @@ class ImdbApiMovieService extends MovieService {
   }
 
   @override
+  Future<Movie> getMovieByImdbId(String imdbId) {
+    // doesn't implemented becouse of api limit :(.
+    throw UnimplementedError();
+  }
+
+  @override
   Future<http.Response> sendGetRequest(String url) async {
     var response = await http.get(
       url,
@@ -62,17 +68,5 @@ class ImdbApiMovieService extends MovieService {
       },
     );
     return response;
-  }
-
-  @override
-  Future<Movie> getMovieByImdbId(String imdbId) {
-    // TODO: implement getMovie
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Movie> getMovieByTitle(String imdbId) {
-    // TODO: implement getMovieByTitle
-    throw UnimplementedError();
   }
 }

@@ -6,7 +6,5 @@ abstract class MovieService extends RestApiService {
   
   Future<List<Movie>> searchMovie(String title);
   Future<Movie> getMovieByImdbId(String imdbId);
-  Future<Movie> getMovieByTitle(String imdbId);
-  Future getImages(String imdbId);
-
+  
 }
